@@ -96,5 +96,17 @@ bind '\C-w:unix-filename-rubout'
 export PATH="$PATH:$HOME/.rvm/bin"
 
 
+### Uses fswatch ( https://github.com/emcrisostomo/fswatch ) to check on files
+function watch {
+  fswatch="`which fswatch`"
+  path="$1"
+  shift
+  cmd="$@"
+  echo "Watching recursively: $path"
+  echo
+  $fswatch -or $path |xargs -n1 -I% sh -c "echo RUNNING COMMAND: $cmd; echo; $cmd"
+}
+
+
 ### Add Sublime Text 2's `subl` command to PATH:
 export PATH=$PATH:/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin
