@@ -85,9 +85,16 @@ export PROMPT_COMMAND='echo -ne "\033]0;${WORD}\007"'
 ### add Skim's command-line utilities to PATH
 export PATH=$PATH:/Applications/Skim.app/Contents/SharedSupport/
 
-### add `tig` to PATH
+### add own installed stuff to PATH
 export PATH=$PATH:/Users/tkairi/bin
 
 ### Rebind CTRL+w so it only deletes to last word separator instead of the whole word
 stty werase undef
 bind '\C-w:unix-filename-rubout'
+
+### Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"
+
+
+### Add Sublime Text 2's `subl` command to PATH:
+export PATH=$PATH:/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin
