@@ -15,6 +15,7 @@ alias gitn="$proxy git"
 alias hgn="$proxy hg"
 alias search="grep -irn"
 alias ls="ls -p"
+alias wtf="ping 8.8.8.8"
 
 ### needed for RVM
 
