@@ -112,8 +112,15 @@ function watch {
 ### Add Sublime Text 2's `subl` command to PATH:
 export PATH=$PATH:/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin
 
-### Add teminal-notifier ( https://github.com/alloy/terminal-notifier/downloads ) to PATH:
+### Add teminal-notifier ( https://github.com/alloy/terminal-notifier/downloads ) to PATH and add handy-dandy notifier
 export PATH=$PATH:/Applications/terminal-notifier.app/Contents/MacOS
+
+function when-done {
+  cmd="$@"
+  $cmd
+  terminal-notifier -message 'DONE'
+}
+
 
 
 ### Git autocomplete ( http://code-worrier.com/blog/autocomplete-git/ )
