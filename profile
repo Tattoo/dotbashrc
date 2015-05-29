@@ -118,7 +118,7 @@ export PATH=$PATH:/Applications/terminal-notifier.app/Contents/MacOS
 function when-done {
   cmd="$@"
   $cmd
-  terminal-notifier -message 'DONE'
+  terminal-notifier -message "DONE: $?"
 }
 
 
