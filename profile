@@ -87,7 +87,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;${WORD}\007"'
 export PATH=$PATH:/Applications/Skim.app/Contents/SharedSupport/
 
 ### add own installed stuff to PATH
-export PATH=$PATH:/Users/tkairi/bin
+export PATH=$PATH:$HOME/bin
 
 ### Rebind CTRL+w so it only deletes to last word separator instead of the whole word
 stty werase undef
@@ -112,8 +112,7 @@ function watch {
 ### Add Sublime Text 2's `subl` command to PATH:
 export PATH=$PATH:/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin
 
-### Add teminal-notifier ( https://github.com/alloy/terminal-notifier/downloads ) to PATH and add handy-dandy notifier
-export PATH=$PATH:/Applications/terminal-notifier.app/Contents/MacOS
+### Add handy-dandy notifier that uses terminal-notifier ( https://github.com/alloy/terminal-notifier/downloads ) 
 
 function when-done {
   cmd="$@"
