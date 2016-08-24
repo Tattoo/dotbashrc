@@ -128,3 +128,10 @@ function when-done {
 if [ -f $HOME/confs/dotbashrc/git-completion.bash ]; then
   . $HOME/confs/dotbashrc/git-completion.bash
 fi
+
+### Mechanism to have project-specific bashrc stuff without polluting this one
+export PROJECTSPECIFIC=""
+
+if [ -n "$PROJECTSPECIFIC" ]; then
+  source "$PROJECTSPECIFIC"
+fi
