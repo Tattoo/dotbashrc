@@ -29,35 +29,6 @@ function virtualize {
   source $path/$1/bin/activate
 }
 
-### Overwrite `cd`. It does two things:
-# - do RVM's magic (copied from the RVM source)
-# - force Python interpreter to 32-bit for RIDE; undo that if not in RIDE's folder
-
-function cd {
-
-  # This is the slightly modified RVM override of cd function. Returns have been removed.
-  # To re-enable "normal" overridden `cd`, delete this.
-  if builtin cd "$@"; then
-    [[ -n "${rvm_current_rvmrc:-}" && "$*" == "." ]] && rvm_current_rvmrc="" || true;
-    __rvm_do_with_env_before;
-    __rvm_project_rvmrc;
-    __rvm_after_cd;
-    __rvm_do_with_env_after;
-   fi
-
-  if [[ "`pwd`" = /Users/tkairi/Coding/RIDE** ]]; then
-    export VERSIONER_PYTHON_PREFER_32_BIT=yes
-    alias python="arch -i386 python"
-    alias paver="arch -i386 paver"
-  else
-    export VERSIONER_PYTHON_PREFER_32_BIT=
-    if [[ "`alias | grep python`" ]]; then
-      unalias python 2>/dev/null
-      unalias paver 2>/dev/null
-    fi
-  fi
-}
-
 ### add default Nethack options
 # "%?/=+!$
 export NETHACKOPTIONS='color,autodig,character:Wizard,fruit:mango,lit_corridor,male,name:Tattoo,pettype:none,pickup_types:"%?/=+!$,pushweapon,race:elf,showexp,showscore,standout,time'
