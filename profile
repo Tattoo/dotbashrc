@@ -16,6 +16,8 @@ alias hgn="$proxy hg"
 alias search="grep -irn"
 alias ls="ls -p"
 alias wtf="ping 8.8.8.8"
+alias reconn="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
+alias robot_clean="find . \( -name log.html -or -name report.html -or -name output.xml -or -name debug.log -or -name \"*-screenshot-*.png\" \) -exec rm -rf {} \;"
 
 ### needed for RVM
 
