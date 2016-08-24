@@ -111,8 +111,8 @@ function watch {
 }
 
 
-### Add Sublime Text 2's `subl` command to PATH:
-export PATH=$PATH:/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin
+### Add Sublime Text 3's `subl` command to PATH:
+export PATH=$PATH:/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
 
 ### Add handy-dandy notifier that uses terminal-notifier ( https://github.com/alloy/terminal-notifier/downloads ) 
 
