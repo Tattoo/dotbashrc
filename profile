@@ -2,7 +2,7 @@
 export PS1='\u:\w \[\033[00;32m\]`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/[\ \\\\\1\ ]\ /`\[\033[37m\]$\[\033[00m\] '
 
 ### export Homebrew to PATH
-export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/bin":$PATH
 
 ### Locale settings
 export LC_ALL=en_US.UTF-8
@@ -34,18 +34,18 @@ function virtualize {
 export NETHACKOPTIONS='color,autodig,character:Wizard,fruit:mango,lit_corridor,male,name:Tattoo,pettype:none,pickup_types:"%?/=+!$,pushweapon,race:elf,showexp,showscore,standout,time'
 
 ### add Jython to PATH
-export JYTHON_HOME=/Users/tkairi/jython2.5.3
-export PATH=/Users/tkairi/jython2.5.3:/Users/tkairi/jython2.5.3/bin:$PATH
+export JYTHON_HOME="/Users/tkairi/jython2.5.3"
+export PATH="/Users/tkairi/jython2.5.3:/Users/tkairi/jython2.5.3/bin":$PATH
 
 ### make new shell have a random word as it's title
 WORD=`perl -MList::Util -e 'print List::Util::shuffle <>' /usr/share/dict/words |head -n1`
 export PROMPT_COMMAND='echo -ne "\033]0;${WORD}\007"'
 
 ### add Skim's command-line utilities to PATH
-export PATH=$PATH:/Applications/Skim.app/Contents/SharedSupport/
+export PATH=$PATH:"/Applications/Skim.app/Contents/SharedSupport/"
 
 ### add own installed stuff to PATH
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:"$HOME/bin"
 
 ### Rebind CTRL+w so it only deletes to last word separator instead of the whole word
 stty werase undef
@@ -66,10 +66,10 @@ function watch {
 }
 
 ### Add Sublime Text 3's `subl` command to PATH:
-export PATH=$PATH:/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
+export PATH=$PATH:"/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 
 ### Add handy-dandy notifier that uses terminal-notifier ( https://github.com/alloy/terminal-notifier/downloads ) 
-export PATH=$PATH:/Applications/terminal-notifier.app/Contents/MacOS
+export PATH=$PATH:"/Applications/terminal-notifier.app/Contents/MacOS"
 
 function when-done {
   cmd="$@"
@@ -83,7 +83,7 @@ if [ -f $HOME/confs/dotbashrc/git-completion.bash ]; then
 fi
 
 ### Mechanism to have project-specific bashrc stuff without polluting this one
-export PROJECTSPECIFIC=""
+export PROJECTSPECIFIC="$HOME/nokia/bashrc"
 
 if [ -n "$PROJECTSPECIFIC" ]; then
   source "$PROJECTSPECIFIC"
