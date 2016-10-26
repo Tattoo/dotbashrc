@@ -1,5 +1,5 @@
 ### Put git branch information to PS1
-export PS1='\u:\w \[\033[00;32m\]`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/[\ \\\\\1\ ]\ /`\[\033[37m\]$\[\033[00m\] '
+export PS1='\u:\w \[\033[00;32m\]`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)/[\ \\\\\1\ ]\ /`\[\033[37m\]\[\033[00m\]\n$ '
 
 ### export Homebrew to PATH
 export PATH="/usr/local/bin":$PATH
