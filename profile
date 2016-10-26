@@ -88,3 +88,6 @@ export PROJECTSPECIFIC="$HOME/nokia/bashrc"
 if [ -n "$PROJECTSPECIFIC" ]; then
   source "$PROJECTSPECIFIC"
 fi
+
+###Force Homebrew's Python's module installation location to path
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
