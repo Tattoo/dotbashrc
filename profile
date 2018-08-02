@@ -84,7 +84,7 @@ if [ -f $HOME/confs/dotbashrc/git-completion.bash ]; then
 fi
 
 ### Mechanism to have project-specific bashrc stuff without polluting this one
-export PROJECTSPECIFIC="$HOME/nokia/bashrc"
+export PROJECTSPECIFIC=""
 
 if [ -n "$PROJECTSPECIFIC" ]; then
   source "$PROJECTSPECIFIC"
