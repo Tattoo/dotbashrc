@@ -4,6 +4,9 @@ export PS1='\u:\w \[\033[00;32m\]`git branch 2> /dev/null | grep -e ^* | sed -E 
 ### export Homebrew to PATH
 export PATH="/usr/local/bin":$PATH
 
+### export Homebrew's python first
+export PATH="/usr/local/opt/python/libexec/bin":$PATH
+
 ### Locale settings
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -17,8 +20,6 @@ alias wtf="ping 8.8.8.8"
 alias reconn="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
 alias robot_clean="find . \( -name log.html -or -name report.html -or -name output.xml -or -name debug.log -or -name \"*-screenshot-*.png\" \) -exec rm -rf {} \;"
 alias gitk="git log --graph --abbrev-commit --pretty=oneline --decorate"
-alias python="/usr/local/bin/python3"
-alias pip="/usr/local/bin/pip3"
 
 ### wrapper for virtualenv; either activate environment if such exists, otherwise create
 function workon {
