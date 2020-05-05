@@ -61,9 +61,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 ### Uses fswatch ( https://github.com/emcrisostomo/fswatch ) to check on files
 function watch {
   fswatch="`which fswatch`"
-  path="$1"
+  cmd="$1"
   shift
-  cmd="$@"
+  path="$@"
   echo "Watching recursively: $path"
   echo
   $fswatch -or $path |xargs -n1 -I% sh -c "echo RUNNING COMMAND: $cmd; echo; $cmd"
