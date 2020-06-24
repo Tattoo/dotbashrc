@@ -45,6 +45,7 @@ function workon {
 DISABLE_AUTO_TITLE="true"
 WORD=$( shuf -n1 /usr/share/dict/words )
 echo -en "\e]2;$WORD\a"
+echo -ne "\033]0;"$WORD"\007" # sets iterm
 
 ### add Skim's command-line utilities to PATH
 export PATH=${PATH}:"/Applications/Skim.app/Contents/SharedSupport/"
