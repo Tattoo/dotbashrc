@@ -53,6 +53,16 @@ export PATH=${PATH}:"/Applications/Skim.app/Contents/SharedSupport/"
 ### add own installed stuff to PATH
 export PATH=${PATH}:"$HOME/bin"
 
+### Rebind CTRL+w so it only deletes to last word separator instead of the whole word
+autoload -U select-word-style
+select-word-style bash
+
+export WORDCHARS='.-'
+
+### Make Fn+ ← / → go beginning and end of line
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
 ### Add RVM to PATH for scripting
 export PATH=${PATH}:"$HOME/.rvm/bin"
 
