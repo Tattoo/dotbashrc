@@ -99,3 +99,13 @@ if [ -n "$PROJECTSPECIFIC" ]; then
   source "$PROJECTSPECIFIC"
 fi
 
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]} m:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle :compinstall filename '/Users/tkairi/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+setopt noautomenu
