@@ -89,9 +89,6 @@ function when-done {
   terminal-notifier -message "DONE: $?"
 }
 
-### Git autocomplete 
-autoload -Uz compinit && compinit
-
 ### Mechanism to have project-specific bashrc stuff without polluting this one
 export PROJECTSPECIFIC=""
 
