@@ -109,3 +109,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 setopt noautomenu
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/tkairi/.sdkman"
+[[ -s "/Users/tkairi/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/tkairi/.sdkman/bin/sdkman-init.sh"
