@@ -11,10 +11,10 @@ setopt PROMPT_SUBST
 PROMPT='%n:%9c %{%F{green}%}$(parse_git_branch)%{%F{none}%}'$'\n''$ '
 
 ### export Homebrew to PATH
-export PATH="/usr/local/bin":${PATH}
+export PATH="/opt/homebrew/bin":${PATH}
 
 ### export Homebrew's python first
-export PATH="/usr/local/opt/python/libexec/bin":${PATH}
+export PATH="/opt/homebrew/opt/python@3.9/libexec/bin":${PATH}
 
 ### Locale settings
 export LC_ALL=en_US.UTF-8
@@ -130,3 +130,5 @@ export NVM_DIR="$HOME/.nvm"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/tkairi/.sdkman"
 [[ -s "/Users/tkairi/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/tkairi/.sdkman/bin/sdkman-init.sh"
+export PATH="/usr/local/sbin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
