@@ -41,6 +41,21 @@ function workon {
   source $base/$1/bin/activate
 }
 
+### create new virtualenv
+function venv {
+  set -e
+  target="$HOME/python-envs/$1"
+
+  if [[ ! -a "$target" ]]; then
+    python -m venv $target
+    workon "$1"
+    pip install wheel ptpython
+  else
+    echo "$target exists already"
+  fi
+  set +e
+}
+
 ### make new shell have a random word as it's title
 DISABLE_AUTO_TITLE="true"
 WORD=$( shuf -n1 /usr/share/dict/words )
